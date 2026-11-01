@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SANFEN Group</title>
+  <meta name="description" content="SANFEN Group builds awesome apps.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="SANFEN Group">
+  <meta property="og:description" content="We build awesome apps.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --fg: #ffffff;
+      --muted: rgba(255, 255, 255, 0.6);
+      --accent: #4fa37a;
+      --line: rgba(82, 82, 91, 0.45);
+      --display: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { color-scheme: dark; }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .wrap { padding: 0 2.5rem; }
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    header .wrap {
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--fg);
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .mark-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      margin-right: -0.32em; /* balance trailing letter-spacing */
+    }
+
+    .mark-sub {
+      margin-top: 0.4rem;
+      font-size: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      margin-right: -0.5em;
+      color: var(--accent);
+    }
+
+    /* Hero */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero {
+      padding-top: 6rem;
+      padding-bottom: 8rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      color: var(--accent);
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin-top: 1.75rem;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(3rem, 11vw, 8.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      max-width: 12ch;
+    }
+
+    .lede {
+      margin-top: 2.25rem;
+      font-size: clamp(1.125rem, 2.2vw, 1.375rem);
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+    }
+
+    footer .wrap {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 2rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    footer .tag {
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+    }
+
+    /* Entrance */
+    .rise {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .rise:nth-child(2) { animation-delay: 0.1s; }
+    .rise:nth-child(3) { animation-delay: 0.2s; }
+
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rise { opacity: 1; transform: none; animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="mark" href="./" aria-label="SANFEN Group">
+        <span class="mark-name">SANFEN</span>
+        <span class="mark-sub">Group</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <p class="eyebrow rise">SANFEN Group</p>
+      <h1 class="rise">We build awesome apps.</h1>
+      <p class="lede rise">That's it.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="year">2026</span> SANFEN Group. All rights reserved.</p>
+      <p class="tag">Apps</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
